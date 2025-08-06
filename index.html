@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitCheck by HealthTrack - Track your BMI, unlock your healthiest self.</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Developer Section -->
+    <div class="developer-section">
+        <button class="developer-btn">
+            <i class="fas fa-code"></i> Developer
+        </button>
+        <div class="developer-modal">
+            <div class="modal-content">
+                <div class="developer-info">
+                    <img src="developer.jpg" alt="Developer Image" class="developer-img">
+                    <h3>Srijan Roy</h3>
+                    <p>Full Stack Developer</p>
+                    <div class="developer-links">
+                        <a href="https://github.com/SrijanRoy12" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://srijanroy12.github.io/Srijan_portfolio/ " target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> Portfolio
+                        </a>
+                        <a href="https://www.linkedin.com/in/srijan-roy-iemians/" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                    <div class="project-description">
+                        <p>HealthTrack BMI Calculator is your smart wellness assistant, designed to compute your Body Mass Index and offer tailored advice on nutrition, fitness, and healthy living—helping you stay on track with your personal health goals.</p>
+                    </div>
+                    <button class="close-modal">&times;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="background-animation">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>Health<span>Track</span></h1>
+            <p class="tagline">Track your BMI, unlock your healthiest self.</p>
+        </header>
+        
+        <main>
+            <div class="calculator-container">
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <h2>BMI Calculator</h2>
+                        <p>Calculate your Body Mass Index and get personalized recommendations</p>
+                    </div>
+                    
+                    <div class="input-group">
+                        <div class="input-field">
+                            <label for="height">Height</label>
+                            <div class="input-with-unit">
+                                <input type="number" id="height" placeholder="Enter your height">
+                                <select id="height-unit">
+                                    <option value="cm">cm</option>
+                                    <option value="in">inches</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="input-field">
+                            <label for="weight">Weight</label>
+                            <div class="input-with-unit">
+                                <input type="number" id="weight" placeholder="Enter your weight">
+                                <select id="weight-unit">
+                                    <option value="kg">kg</option>
+                                    <option value="lb">pounds</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button id="calculate-btn" class="btn-primary">
+                        <span>Calculate BMI</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    
+                    <div class="result-container" id="result-container">
+                        <div class="bmi-value">
+                            <h3>Your BMI</h3>
+                            <div class="value-circle">
+                                <span id="bmi-result">00.0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bmi-category">
+                            <p id="bmi-category">-</p>
+                            <div class="category-bar">
+                                <div class="category-segment underweight"></div>
+                                <div class="category-segment normal"></div>
+                                <div class="category-segment overweight"></div>
+                                <div class="category-segment obese"></div>
+                                <div class="category-marker" id="category-marker"></div>
+                            </div>
+                            <div class="category-labels">
+                                <span>Underweight</span>
+                                <span>Normal</span>
+                                <span>Overweight</span>
+                                <span>Obese</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="recommendations-card" id="recommendations-card">
+                    <div class="recommendations-header">
+                        <h3>Your Personalized Plan</h3>
+                        <p>Based on your BMI results</p>
+                    </div>
+                    
+                    <div class="recommendations-tabs">
+                        <button class="tab-btn active" data-tab="diet">Diet Plan</button>
+                        <button class="tab-btn" data-tab="exercise">Exercise</button>
+                        <button class="tab-btn" data-tab="tips">Health Tips</button>
+                    </div>
+                    
+                    <div class="tab-content active" data-tab="diet">
+                        <div class="recommendation-content" id="diet-content">
+                            <div class="placeholder">
+                                <i class="fas fa-utensils"></i>
+                                <p>Calculate your BMI to get personalized diet recommendations</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" data-tab="exercise">
+                        <div class="recommendation-content" id="exercise-content">
+                            <div class="placeholder">
+                                <i class="fas fa-dumbbell"></i>
+                                <p>Calculate your BMI to get personalized exercise recommendations</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" data-tab="tips">
+                        <div class="recommendation-content" id="tips-content">
+                            <div class="placeholder">
+                                <i class="fas fa-heartbeat"></i>
+                                <p>Calculate your BMI to get personalized health tips</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-section">
+                <div class="info-card">
+                    <i class="fas fa-info-circle"></i>
+                    <h3>About BMI</h3>
+                    <p>Body Mass Index (BMI) is a measure of body fat based on height and weight. It helps categorize whether a person is underweight, normal weight, overweight, or obese.</p>
+                </div>
+                
+                <div class="info-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>BMI Categories</h3>
+                    <ul>
+                        <li>Underweight: BMI less than 18.5</li>
+                        <li>Normal weight: BMI 18.5-24.9</li>
+                        <li>Overweight: BMI 25-29.9</li>
+                        <li>Obese: BMI 30 or greater</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <footer>
+        <p>© 2025 HealthTrack BMI Calculator | Designed with <i class="fas fa-heart"></i> for your health | Srijan Roy</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
